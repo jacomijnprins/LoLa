@@ -1,9 +1,4 @@
 # LoLa
 
 ## Project: Curriculum for efficient NLI learning
-Group members:
-  - Pepijn: 
-  - Jessica: 
-  - Oliver:
-  -  : 
-  - Jaco: 1501178
+Parameters for DistillBERT: learning rate = 2e-5, decay = 0.01
