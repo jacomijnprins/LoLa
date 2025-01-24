@@ -1,1 +1,0 @@
-conda install -n .conda ipykernel --update-deps --force-reinstall
