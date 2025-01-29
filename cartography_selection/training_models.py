@@ -62,7 +62,7 @@ def train_model(dataset_name, model_checkpoint):
 
 
 if __name__ == "__main__":
-    dataset_name = 'most_ambiguous' # When training different model only change dataset_name
+    dataset_name = 'mix_categories' # When training different model only change dataset_name
     model_checkpoint = 'roberta-base'
 
     # check for gpu or cpu

@@ -72,7 +72,7 @@ def log_results(log_file, model_name, metrics):
 
 
 if __name__ == "__main__":
-    model_name = "most_ambiguous" # only change this for each model
+    model_name = "mix_categories" # only change this for each model
 
     tokenizer = RobertaTokenizer.from_pretrained('roberta-base')
 
