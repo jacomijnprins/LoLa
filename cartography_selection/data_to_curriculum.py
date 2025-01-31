@@ -91,10 +91,10 @@ def make_curriculum(name):
     """
     ambiguous, easy_to_learn, hard_to_learn = create_categories()
     
-    guids = mix_categories_balanced(ambiguous, easy_to_learn, hard_to_learn) # change the guid function
+    # guids = triplets_ambiguous_easy(ambiguous, easy_to_learn, hard_to_learn) # change the guid function
+    guids = random_baseline()
 
     curriculum = SNLI_data[(SNLI_data['guid'].isin(guids))]
-    print(curriculum['label'].value_counts())
 
     curriculum.to_csv(f'curricula/{name}.csv')
 
@@ -111,9 +111,9 @@ def most_ambiguous(ambiguous):
 def most_ambiguous_balanced(ambiguous):
     # sorted = ambiguous.sort_values('variability')
 
-    entailment = ambiguous[ambiguous['label']==0].sort_values('variability')['guid'][-667:]
-    neutral = ambiguous[ambiguous['label']==1].sort_values('variability')['guid'][-667:]
-    contradiction = ambiguous[ambiguous['label']==2].sort_values('variability')['guid'][-667:]
+    entailment = ambiguous[ambiguous['label']==0].sort_values('variability')['guid'][-1667:]
+    neutral = ambiguous[ambiguous['label']==1].sort_values('variability')['guid'][-1667:]
+    contradiction = ambiguous[ambiguous['label']==2].sort_values('variability')['guid'][-1667:]
 
     guids = pd.concat([entailment, neutral, contradiction])
 
@@ -157,11 +157,40 @@ def mix_categories_balanced(ambiguous, easy_to_learn, hard_to_learn):
     return pd.concat([ambiguous_guids, easy_to_learn_guids, hard_to_learn_guids])
 
 
+def triplets_ambiguous_easy(ambiguous, easy_to_learn, hard_to_learn):
+    ambiguous_premises = SNLI_data[SNLI_data['guid'].isin(ambiguous['guid'])]
+    premise_pairs = ambiguous_premises['premise'][ambiguous_premises['premise'].duplicated()]
+    double_premises = premise_pairs.unique() # series of premisses that are double in the ambiguous category
+
+    easy_premises = SNLI_data[SNLI_data['guid'].isin(easy_to_learn['guid'])]
+    multiple_premises = easy_premises[easy_premises['premise'].isin(double_premises)]
+    triple_premises = multiple_premises['premise'][~multiple_premises['premise'].duplicated(keep=False)] # series of double premisses that have a third in easy to learn
+    
+    # print(f'length list double premisses in ambiguous: {len(double_premises)}') # 11560
+    # print(f'length list double premisses with third in easy: {len(triple_premises)}') # 5957
+
+    triples = triple_premises[:1667] # firt 667 premisses that will appear in triples
+
+    ambiguous_guids = ambiguous_premises['guid'][ambiguous_premises['premise'].isin(triples)]
+    easy_guids = easy_premises['guid'][easy_premises['premise'].isin(triples)]
+    # print(f'length of ambiguous: {len(ambiguous_guids)}')
+    # print(f'length of easy: {len(easy_guids)}')
+
+    return pd.concat([ambiguous_guids, easy_guids])
+
+def random_baseline():
+    entailment = SNLI_data['guid'][random.sample(sorted(list(SNLI_data[SNLI_data['label']==0].index)), 667)]
+    neutral = SNLI_data['guid'][random.sample(sorted(list(SNLI_data[SNLI_data['label']==1].index)), 667)]
+    contradiction = SNLI_data['guid'][random.sample(sorted(list(SNLI_data[SNLI_data['label']==2].index)), 667)]
+
+    return pd.concat([entailment, neutral, contradiction])
+
 if __name__ == "__main__":
     global SNLI_data, cartography_data
     SNLI_data, cartography_data = load_data()
 
     # ambiguous, easy_to_learn, hard_to_learn = create_categories()
-    # print(len(mix_categories(ambiguous, easy_to_learn, hard_to_learn)))
+    # triplets_ambiguous_easy(ambiguous, easy_to_learn, hard_to_learn)
+    # print(random_baseline())
 
-    make_curriculum('mix_categories_balanced') # change this name and don't forget to change the guid function 
+    make_curriculum('most_ambiguous_balanced_5k') # change this name and don't forget to change the guid function 

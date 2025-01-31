@@ -4,3 +4,86 @@ model precision: 0.1075
 model recall: 0.3278
 model f1: 0.1619
 
+Model most_ambiguous_balanced:
+model accuracy: 0.3329
+model precision: 0.1108
+model recall: 0.3329
+model f1: 0.1663
+
+Model most_hard_to_learn_balanced:
+model accuracy: 0.3307
+model precision: 0.3093
+model recall: 0.3307
+model f1: 0.2662
+
+Model mix_categories:
+model accuracy: 0.3235
+model precision: 0.1047
+model recall: 0.3235
+model f1: 0.1581
+
+Model mix_categories_balanced:
+model accuracy: 0.3278
+model precision: 0.1075
+model recall: 0.3278
+model f1: 0.1619
+
+Model triplets_ambiguous_easy: (2k)
+model accuracy: 0.3329
+model precision: 0.1108
+model recall: 0.3329
+model f1: 0.1663
+
+Model triplets_ambiguous_easy_6k:
+Accuracy: 0.6522
+
+Classification Report:
+   entailment       0.78      0.84      0.81      3329
+      neutral       0.57      0.35      0.43      3235
+contradiction       0.59      0.80      0.68      3278
+
+    micro avg       0.65      0.66      0.66      9842
+    macro avg       0.64      0.66      0.64      9842
+ weighted avg       0.65      0.66      0.64      9842
+
+Model triplets_ambiguous_easy_5k:
+Accuracy: 0.6533
+
+Classification Report:
+               precision    recall  f1-score   support
+
+   entailment       0.81      0.81      0.81      3329
+      neutral       0.56      0.32      0.41      3235
+contradiction       0.58      0.86      0.69      3278
+
+    micro avg       0.65      0.66      0.66      9842
+    macro avg       0.65      0.66      0.64      9842
+ weighted avg       0.65      0.66      0.64      9842
+
+Model randomg_baseline:
+Accuracy: 0.6470
+
+Classification Report:
+               precision    recall  f1-score   support
+
+   entailment       0.83      0.71      0.77      3329
+      neutral       0.54      0.41      0.47      3235
+contradiction       0.59      0.84      0.70      3278
+
+    micro avg       0.65      0.66      0.65      9842
+    macro avg       0.65      0.66      0.64      9842
+ weighted avg       0.65      0.66      0.64      9842
+
+Model most_ambiguous_5k:
+Accuracy: 0.4388
+
+Classification Report:
+               precision    recall  f1-score   support
+
+   entailment       0.87      0.33      0.48      3329
+      neutral       0.37      0.97      0.53      3235
+contradiction       0.79      0.04      0.08      3278
+
+    micro avg       0.44      0.45      0.44      9842
+    macro avg       0.68      0.45      0.36      9842
+ weighted avg       0.68      0.45      0.36      9842
