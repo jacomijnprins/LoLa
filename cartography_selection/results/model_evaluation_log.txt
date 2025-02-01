@@ -87,3 +87,28 @@ contradiction       0.79      0.04      0.08      3278
     micro avg       0.44      0.45      0.44      9842
     macro avg       0.68      0.45      0.36      9842
  weighted avg       0.68      0.45      0.36      9842
+
+Model metaset_0_subset:
+model accuracy: 0.5588
+model precision: 0.5638
+model recall: 0.5588
+model f1: 0.4843
+
+Model metaset_1_subset:
+model accuracy: 0.5139
+model precision: 0.5735
+model recall: 0.5139
+model f1: 0.4112
+
+Model metaset_2_subset:
+model accuracy: 0.4441
+model precision: 0.5109
+model recall: 0.4441
+model f1: 0.3584
+
+Model metaset_3_subset:
+model accuracy: 0.5969
+model precision: 0.5953
+model recall: 0.5969
+model f1: 0.5349
+
