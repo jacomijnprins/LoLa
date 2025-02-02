@@ -60,7 +60,7 @@ contradiction       0.58      0.86      0.69      3278
     macro avg       0.65      0.66      0.64      9842
  weighted avg       0.65      0.66      0.64      9842
 
-Model randomg_baseline:
+Model random_baseline:
 Accuracy: 0.6470
 
 Classification Report:
@@ -74,7 +74,7 @@ contradiction       0.59      0.84      0.70      3278
     macro avg       0.65      0.66      0.64      9842
  weighted avg       0.65      0.66      0.64      9842
 
-Model most_ambiguous_5k:
+Model most_ambiguous_balanced_5k:
 Accuracy: 0.4388
 
 Classification Report:
@@ -88,6 +88,7 @@ contradiction       0.79      0.04      0.08      3278
     macro avg       0.68      0.45      0.36      9842
  weighted avg       0.68      0.45      0.36      9842
 
+Baseline that preserves triplets:
 Model metaset_0_subset:
 model accuracy: 0.5588
 model precision: 0.5638
@@ -111,4 +112,66 @@ model accuracy: 0.5969
 model precision: 0.5953
 model recall: 0.5969
 model f1: 0.5349
+
+Model metaset_4_subset:
+model accuracy: 0.5453
+model precision: 0.5772
+model recall: 0.5453
+model f1: 0.4582
+
+Baseline that is fully random:
+Model random_subset_0:
+model accuracy: 0.6654
+model precision: 0.6614
+model recall: 0.6654
+model f1: 0.6428
+
+Model random_subset_1:
+model accuracy: 0.6502
+model precision: 0.6368
+model recall: 0.6502
+model f1: 0.6372
+
+Model random_subset_2:
+Accuracy: 0.5365
+
+Classification Report:
+               precision    recall  f1-score   support
+
+   entailment       0.64      0.77      0.70      3329
+      neutral       0.73      0.03      0.06      3235
+contradiction       0.46      0.83      0.59      3278
+
+    micro avg       0.54      0.55      0.54      9842
+    macro avg       0.61      0.54      0.45      9842
+ weighted avg       0.61      0.55      0.45      9842
+
+Model random_subset_3:
+
+Accuracy: 0.5981
+
+Classification Report:
+               precision    recall  f1-score   support
+
+   entailment       0.72      0.83      0.77      3329
+      neutral       0.62      0.15      0.24      3235
+contradiction       0.51      0.84      0.63      3278
+
+    micro avg       0.60      0.61      0.60      9842
+    macro avg       0.62      0.60      0.55      9842
+ weighted avg       0.62      0.61      0.55      9842
+
+Model random_subset_4:
+Accuracy: 0.5694
+
+Classification Report:
+               precision    recall  f1-score   support
+
+   entailment       0.72      0.79      0.75      3329
+      neutral       0.56      0.12      0.20      3235
+contradiction       0.47      0.82      0.60      3278
+
+    micro avg       0.57      0.58      0.57      9842
+    macro avg       0.59      0.58      0.52      9842
+ weighted avg       0.59      0.58      0.52      9842
 
