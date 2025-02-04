@@ -1,0 +1,12 @@
+Accuracy: 0.6158
+
+Classification Report:
+               precision    recall  f1-score   support
+
+   entailment       0.72      0.90      0.80      3329
+      neutral       0.61      0.39      0.48      3235
+contradiction       0.65      0.75      0.70      3278
+
+    micro avg       0.61      0.62      0.61      9842
+    macro avg       0.60      0.62      0.60      9842
+ weighted avg       0.60      0.62      0.60      9842
