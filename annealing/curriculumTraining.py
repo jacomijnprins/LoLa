@@ -60,7 +60,8 @@ def train_annealing_curriculum(
     print(f"Loading sorted data from {csv_file}")
     df = pd.read_csv(csv_file)
 
-    df = df.sort_values(by="difficulty_score", ascending=True).reset_index(drop=True)
+    # For reverse curriculum training (hardest to easiest) change line 64 sort_values() argument to acending=True
+    df = df.sort_values(by="difficulty_score", ascending=False).reset_index(drop=True)
 
     # 1) Split the dataset into N buckets
     total_len = len(df)
