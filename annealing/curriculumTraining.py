@@ -74,8 +74,9 @@ def train_annealing_curriculum(
         bucket_df = df.iloc[start_idx:end_idx].copy()
         buckets.append(bucket_df)
         start_idx = end_idx
-      
-    base_dir = "models/curriculum_runs"
+
+    # For reverse, base_dir = "models/reverse_curriculum/curriculum_runs
+    base_dir = "models/curriculum_learning/curriculum_runs"
     os.makedirs(base_dir, exist_ok=True)
 
     # Prepare model & base training args
