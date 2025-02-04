@@ -98,11 +98,11 @@ def evaluate_single_metaset(metaset_idx, metaset_file):
         results[f"model_{model_idx}_accuracy"] = accuracies
 
     # Save the results for this metaset
-    output_file = f"results/difficulty_scores_metaset_{metaset_idx}.csv"
+    output_file = f"results/metasets_with_scores/difficulty_scores_metaset_{metaset_idx}.csv"
     results.to_csv(output_file, index=False)
     print(f"Saved results for metaset {metaset_idx} to {output_file}.")
 
 
 metaset_idx = 4
-metaset_file = f"data/processed/metaset_{metaset_idx}.csv"
+metaset_file = f"data/metaset_{metaset_idx}.csv"
 evaluate_single_metaset(metaset_idx, metaset_file)
