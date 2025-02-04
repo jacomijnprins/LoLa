@@ -38,8 +38,8 @@ def preprocess_metasets(input_folder, output_folder):
 
 
 # Input and output folder paths
-input_folder = "data/processed"
-output_folder = "data/processed"
+input_folder = "cross_review/data"
+output_folder = "cross_review/data"
 
 preprocess_metasets(input_folder, output_folder)
 
