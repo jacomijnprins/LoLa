@@ -102,7 +102,7 @@ def evaluate_single_metaset(metaset_idx, metaset_file):
     results.to_csv(output_file, index=False)
     print(f"Saved results for metaset {metaset_idx} to {output_file}.")
 
-
+#change metaset_idx to integer in range 0 to N. 
 metaset_idx = 4
 metaset_file = f"data/metaset_{metaset_idx}.csv"
 evaluate_single_metaset(metaset_idx, metaset_file)
