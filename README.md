@@ -3,6 +3,20 @@ This repository contains the scripts used for the paper "Learning more with Less
 
 ## Installation and dependencies
 *list all packages used*
+- pandas
+- os
+- random
+- assigntools
+- torch
+- transformers
+- sklearn
+- tqdm
+- logging
+- re
+- data_utils_glue (from [Cartography](https://github.com/allenai/cartography))
+
+# from assigntools.LoLa.sen_analysis import spacy_process_sen2tok, display_doc_dep
+from data_utils_glue import convert_string_to_unique_number
 
 ## Dataset Information
 The Data used for this project is the SNLI dataset by Bowman et al (2015). The data can be acquired as a zip file named SNLI_raw.zip under ├── data/raw.
