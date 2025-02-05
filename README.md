@@ -20,8 +20,7 @@ print(f"Length of the SNLI dataset with the wrong labels: {len(SNLI['train'])}")
 ```
 From [Lasha Abzianidze](https://colab.research.google.com/drive/1cvOltz1eqA9QzzNCM5m7UsUhtw2_guxi?usp=sharing).
 
-For the baseline models, the metasets created in the project are included under ├──baseline/data.
-
+In difficulty scoring, the meta subs sets created in the project are included under ├──baseline/data. The meta subsets are generated using ├──baseline/preprocess.py
 ## Results
 
 The following accuracy scores on the SNLI development set were achieved using the developed curricula.
@@ -30,7 +29,7 @@ The following accuracy scores on the SNLI development set were achieved using th
 |------------------|--------------------------------|
 | Baseline         |  0.6654                        |
 | Baseline-triplet |  0.6502                        |
-|------------------|--------------------------------|
+|------------------|--------------------|
 | Difficulty scoring | 0.6872   |
 | Difficulty scoring reversed      | 0.6158|
 | Carthography-Ambiguous | 0.3329                 |
