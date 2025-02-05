@@ -1,8 +1,36 @@
 # Learning more with Less: Curriculum Learning for Natural Language Inference using Strategice Data Selection
 This repository contains the scripts used for the paper "Learning more with Less: Curriculum Learning for Natural Language Inference using Strategice Data Selection". In this paper, curriculum learning was explored through mindfully selecting data from the SNLI train set by Bowman et al. (2015). Two different selection methods were explored: dataset carthography (Swayamdipta et al, 2020) and difficulty evaluation (Xu et al, 2020).
 
-# Installation and dependencies
+## Installation and dependencies
 *list all packages used*
+
+## Dataset Information
+The Data used for this project is the SNLI dataset by Bowman et al (2015). The data can be acquired as a zip file named SNLI_raw.zip under ├── data/raw.
+
+(add code, link lasha's notebook) This data can also be downloaded through the following code by Lasha Abzianidze:
+'''
+
+
+'''
+
+For the baseline models, the metasets created in the project are included under ├──baseline/data.
+
+## Results
+
+The following accuracy scores on the SNLI development set were achieved using the developed curricula.
+
+| Curriculum       | Accuracy                       |
+|------------------|--------------------------------|
+| Baseline         |  0.6654                        |
+| Baseline-triplet |  0.6502                        |
+|------------------|--------------------------------|
+|   | Difficulty-based, Self-paced    |
+| Training Steps  | Number of epochs, batch size    |
+| Optimizer      | Adam, SGD                        |
+| Learning Rate  | 1e-5, 1e-4, etc.                 |
+| Metrics        | Accuracy, F1-score               |
+| Hardware       | GPU, TPU, CPU                    |
+| Repository     | GitHub link or project name      |
 
 # References
 Samuel R. Bowman, Gabor Angeli, Christopher Potts,
