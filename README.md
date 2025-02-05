@@ -38,6 +38,12 @@ The following accuracy scores on the SNLI development set were achieved using th
 | Carthography-Easy-Ambiguous       | 0.3329                    |
 | Carthography-Mixed     | 0.3255      |
 
+## Directory structure
+examples structure by chatgpt
+├── data/              # Datasets and preprocessing scripts
+├── models/            # Model implementations
+├── experiments/       # Training scripts and results
+├── README.md          # Project documentation
 ## Usage and examples
 
 This was suggested by chatgpt but I currently don't have any ideas for what we could put in the section
