@@ -7,11 +7,18 @@ This repository contains the scripts used for the paper "Learning more with Less
 ## Dataset Information
 The Data used for this project is the SNLI dataset by Bowman et al (2015). The data can be acquired as a zip file named SNLI_raw.zip under ├── data/raw.
 
-(add code, link lasha's notebook) This data can also be downloaded through the following code by Lasha Abzianidze:
-'''
-
+(add code, link lasha's notebook) This data can also be downloaded through the following code:
 
 '''
+# if assigntools not yet downloaded run line
+# ! git clone https://github.com/kovvalsky/assigntools.git
+from assigntools.LoLa.read_nli import snli_jsonl2dict, sen2anno_from_nli_problems
+from assigntools.LoLa.sen_analysis import spacy_process_sen2tok, display_doc_dep
+SNLI, S2A = snli_jsonl2dict('snli_1.0') 
+print(f"Length of the SNLI dataset with the wrong labels: {len(SNLI['train'])}")
+
+'''
+From [Lasha Abzianidze](https://colab.research.google.com/drive/1cvOltz1eqA9QzzNCM5m7UsUhtw2_guxi?usp=sharing).
 
 For the baseline models, the metasets created in the project are included under ├──baseline/data.
 
@@ -30,6 +37,10 @@ The following accuracy scores on the SNLI development set were achieved using th
 | Carthography-Hard-to-learn        | 0.3307            |
 | Carthography-Easy-Ambiguous       | 0.3329                    |
 | Carthography-Mixed     | 0.3255      |
+
+## Usage and examples
+
+This was suggested by chatgpt but I currently don't have any ideas for what we could put in the section
 
 # References
 Samuel R. Bowman, Gabor Angeli, Christopher Potts,
