@@ -24,13 +24,12 @@ The following accuracy scores on the SNLI development set were achieved using th
 | Baseline         |  0.6654                        |
 | Baseline-triplet |  0.6502                        |
 |------------------|--------------------------------|
-|   | Difficulty-based, Self-paced    |
-| Training Steps  | Number of epochs, batch size    |
-| Optimizer      | Adam, SGD                        |
-| Learning Rate  | 1e-5, 1e-4, etc.                 |
-| Metrics        | Accuracy, F1-score               |
-| Hardware       | GPU, TPU, CPU                    |
-| Repository     | GitHub link or project name      |
+| Difficulty scoring | 0.6872   |
+| Difficulty scoring reversed      | 0.6158|
+| Carthography-Ambiguous | 0.3329                 |
+| Carthography-Hard-to-learn        | 0.3307            |
+| Carthography-Easy-Ambiguous       | 0.3329                    |
+| Carthography-Mixed     | 0.3255      |
 
 # References
 Samuel R. Bowman, Gabor Angeli, Christopher Potts,
