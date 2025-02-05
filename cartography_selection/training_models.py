@@ -7,14 +7,27 @@ import os
 class CSVDataset(Dataset):
     def __init__(self, file_path, tokenizer):
         data = pd.read_csv(file_path)
+        data = data.dropna(subset=['premise', 'hypothesis'])
+        data = data[data['label'] != -1]
         self.texts = list(zip(data['premise'], data['hypothesis']))
         self.labels = data['label'].astype(int).tolist()
         self.encodings = tokenizer(
-            [f'{p} [SEP] {h}' for p, h in self.texts],
+            list(data['premise']),
+            list(data['hypothesis']),
             truncation=True,
             padding=True,
             max_length=128
-        )
+            )
+    # def __init__(self, file_path, tokenizer):
+    #     data = pd.read_csv(file_path)
+    #     self.texts = list(zip(data['premise'], data['hypothesis']))
+    #     self.labels = data['label'].astype(int).tolist()
+    #     self.encodings = tokenizer(
+    #         [f'{p} [SEP] {h}' for p, h in self.texts],
+    #         truncation=True,
+    #         padding=True,
+    #         max_length=128
+    #     )
 
     def __len__(self):
         return len(self.texts)
@@ -62,7 +75,7 @@ def train_model(dataset_name, model_checkpoint):
 
 
 if __name__ == "__main__":
-    dataset_name = 'most_ambiguous_balanced_5k' # When training different model only change dataset_name
+    dataset_name = 'random_subset_4' # When training different model only change dataset_name
     model_checkpoint = 'roberta-base'
 
     # check for gpu or cpu
