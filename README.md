@@ -66,18 +66,18 @@ The structure of this project:
 - difficulty_score/         # Implementation, models and results of difficulty scoring
 
 Every directory dealing with implementations has a folder containing the preprocessed data or curricula; folder with the models and a folder containing the results of the models. All the other files are the code that are needed to recreate every step of the experiments. (Explanation on what to run can be found in section 'Usage')
-    - N.B: any files which were too large to upload after zipping/condensing have google drive download links. see "download.txt" for links (located in relevant subdirectories)
+- N.B: any files which were too large to upload after zipping/condensing have google drive download links. see "download.txt" for links (located in relevant subdirectories)
 
 #### Difficulty_score directory 
 Contains the entire process for the difficulty scoring curriculum learning method, adapted from Xu et al. (2020). 
-    - The teacher models are trained on 5 splits of SNLI_train.csv. Relevant code is in subdirectory "teacher_models".
-    - "cross_review" subdirectory contains the code for evaluating the trained teacher models and producing a dataset of instances with difficulty scores.
-    - "annealing" subdirectory contains the final model and evaluation, trained on both curriculum (easiest -> hardest) and reverse curriculum (hardest -> easiest) ways.
+- The teacher models are trained on 5 splits of SNLI_train.csv. Relevant code is in subdirectory "teacher_models".
+- "cross_review" subdirectory contains the code for evaluating the trained teacher models and producing a dataset of instances with difficulty scores.
+- "annealing" subdirectory contains the final model and evaluation, trained on both curriculum (easiest -> hardest) and reverse curriculum (hardest -> easiest) ways.
 
 #### Cartography_selection directory
 Contains the entire process for the cartography curriculum learning method, adapted from Swayamdipta et al. (2020).
-    - The cartography scores dataset was acquired from the [Cartography github](https://github.com/allenai/cartography/tree/main/data/data_map_coordinates) from the paper.
-    - Many curricula were produced for this selection method; all of them can be found in the curricula folder and every piece of code is made to run (produce/analyse) for a single curriculum, so the correct curriculum name must be given.
+- The cartography scores dataset was acquired from the [Cartography github](https://github.com/allenai/cartography/tree/main/data/data_map_coordinates) from the paper.
+- Many curricula were produced for this selection method; all of them can be found in the curricula folder and every piece of code is made to run (produce/analyse) for a single curriculum, so the correct curriculum name must be given.
 
 
 ## Usage
