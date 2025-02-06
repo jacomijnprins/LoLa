@@ -91,7 +91,7 @@ Contains the entire process for the cartography curriculum learning method, adap
     - Run evaluation: baseline/baselineEval.py
 - Difficulty scoring:
     - Download the model: difficulty_score/annealing/models/curriculum_learning/download.txt
-    - Run evaluation: difficulty_score\annealing\curriculumLearning_Eval.py
+    - Run evaluation: difficulty_score/annealing/curriculumLearning_Eval.py
 - Cartography:
     - Download model: cartography_selection/models/download.txt
     - Run evaluation: cartography_selection/analysing_models.py
