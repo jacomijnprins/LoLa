@@ -1,4 +1,0 @@
-## Data Download
-Reverse Curriculum model available on Google Drive
-
-[Download the data from link](https://drive.google.com/file/d/1g8l20F1Jqd29GHfJk_HK3ZkcQcC0lcee/view?usp=drive_link)
