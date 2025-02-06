@@ -72,11 +72,11 @@ def log_results(log_file, model_name, metrics):
 
 
 if __name__ == "__main__":
-    model_name = "mix_categories" # only change this for each model
+    model_name = "triplets_ambiguous_easy_5k" # only change this for each model
 
     tokenizer = RobertaTokenizer.from_pretrained('roberta-base')
 
-    val_data = pd.read_csv('data/snli_val.csv')
+    val_data = pd.read_csv('../data/snli_val.csv')
     val_dataset =SNLIDataset(val_data, tokenizer)
     val_loader = DataLoader(val_dataset, batch_size=32, shuffle=False)
 

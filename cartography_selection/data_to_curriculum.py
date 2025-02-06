@@ -23,15 +23,15 @@ def load_data():
     Then adds guid's to both datasets to link instances.
     Then converts SNLI to dataframe with right columns.
     """
-    cartography_data = pd.read_json('data/snli_roberta_0_6_data_map_coordinates.jsonl', lines=True)
+    cartography_data = pd.read_json('../data/snli_roberta_0_6_data_map_coordinates.jsonl', lines=True)
 
-    if os.path.exists('data/SNLI.csv'):
-        SNLI_dataframe = pd.read_csv('data/SNLI.csv', index_col=False)
+    if os.path.exists('../data/SNLI.csv'):
+        SNLI_dataframe = pd.read_csv('../data/SNLI.csv', index_col=False)
         cartography_data = pd.merge(cartography_data, SNLI_dataframe[['guid', 'label']], how='right', left_on='guid', right_on='guid')
         return SNLI_dataframe, cartography_data
     
-    SNLI, S2A = snli_jsonl2dict('data/snli_1.0') 
-    SNLI_with_wrong, S2A = snli_jsonl2dict('data/snli_1.0', clean_labels=False)
+    SNLI, S2A = snli_jsonl2dict('../data/snli_1.0') 
+    SNLI_with_wrong, S2A = snli_jsonl2dict('../data/snli_1.0', clean_labels=False)
 
     wrong_keys = list(set(list(SNLI_with_wrong['train'].keys())).difference(list(SNLI['train'].keys())))
 
@@ -57,8 +57,8 @@ def load_data():
     SNLI_dataframe['label']= SNLI_dataframe.label.apply(lambda row: str_to_int(row))
 
     # save the correct SNLI dataframe and rewrite cartography data
-    SNLI_dataframe.to_csv(f'data/SNLI.csv', index=False)
-    with open('data/snli_roberta_0_6_data_map_coordinates.jsonl', "w") as f:
+    SNLI_dataframe.to_csv(f'../data/SNLI.csv', index=False)
+    with open('../data/snli_roberta_0_6_data_map_coordinates.jsonl', "w") as f:
         f.write(cartography_data.to_json(orient='records', lines=True, force_ascii=False))
 
     cartography_data = pd.merge(cartography_data, SNLI_data[['guid', 'label']], how='right', left_on='guid', right_on='guid')
@@ -193,4 +193,4 @@ if __name__ == "__main__":
     # triplets_ambiguous_easy(ambiguous, easy_to_learn, hard_to_learn)
     # print(random_baseline())
 
-    make_curriculum('most_ambiguous_balanced_5k') # change this name and don't forget to change the guid function 
+    make_curriculum('triplets_ambiguous_easy_5k') # change this name and don't forget to change the guid function 

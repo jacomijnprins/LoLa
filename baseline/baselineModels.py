@@ -4,13 +4,6 @@ import pandas as pd
 from transformers import RobertaTokenizer, RobertaForSequenceClassification, Trainer, TrainingArguments
 from torch.utils.data import Dataset
 
-# Device information
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-print(f"Using device: {device}")
-
-model_checkpoint = 'roberta-base'
-tokenizer = RobertaTokenizer.from_pretrained(model_checkpoint)
-
 
 class CSVMetaDataset(Dataset):
     def __init__(self, file_path, tokenizer):
@@ -83,6 +76,13 @@ def train_model(metaset_subset_index):
     trainer.save_model(f"models/meta_{metaset_subset_index}_model")
     print(f"Model for meta-dataset {metaset_subset_index} saved to models/meta_{metaset_subset_index}_model")
 
+if __name__ == "__main__":
+    # Device information
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print(f"Using device: {device}")
 
-# train models one a time for computational efficiency
-train_model(0)
+    model_checkpoint = 'roberta-base'
+    tokenizer = RobertaTokenizer.from_pretrained(model_checkpoint)
+
+    # train models one a time for computational efficiency
+    train_model(0)

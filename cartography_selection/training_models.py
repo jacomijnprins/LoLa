@@ -75,7 +75,7 @@ def train_model(dataset_name, model_checkpoint):
 
 
 if __name__ == "__main__":
-    dataset_name = 'random_subset_4' # When training different model only change dataset_name
+    dataset_name = 'triplets_ambiguous_easy_5k' # When training different model only change dataset_name
     model_checkpoint = 'roberta-base'
 
     # check for gpu or cpu
