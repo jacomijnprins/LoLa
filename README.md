@@ -59,11 +59,11 @@ These were the scores for the 5k curricula:
 
 ## Directory structure
 The structure of this project:
-─ README.md                 # Project documentation
-─ data/                     # Datasets and preprocessing scripts
-─ baseline/                 # Implementation, models and results of baselines
-─ cartography_selection/    # Implementation, models and results of cartography curricula
-─ difficulty_score/         # Implementation, models and results of difficulty scoring
+- README.md                 # Project documentation
+- data/                     # Datasets and preprocessing scripts
+- baseline/                 # Implementation, models and results of baselines
+- cartography_selection/    # Implementation, models and results of cartography curricula
+- difficulty_score/         # Implementation, models and results of difficulty scoring
 
 Every directory dealing with implementations has a folder containing the preprocessed data or curricula; folder with the models and a folder containing the results of the models. All the other files are the code that are needed to recreate every step of the experiments. (Explanation on what to run can be found in section 'Usage')
     - N.B: any files which were too large to upload after zipping/condensing have google drive download links. see "download.txt" for links (located in relevant subdirectories)
