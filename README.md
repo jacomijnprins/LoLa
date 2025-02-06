@@ -2,7 +2,7 @@
 This repository contains the scripts used for the paper "Learning more with Less: Curriculum Learning for Natural Language Inference using Strategice Data Selection". In this paper, curriculum learning was explored through mindfully selecting data from the SNLI train set by Bowman et al. (2015). Two different selection methods were explored: dataset carthography (Swayamdipta et al, 2020) and difficulty evaluation (Xu et al, 2020).
 
 ## Installation and dependencies
-*list all packages used*
+*All packages used:*
 - pandas
 - os
 - random
@@ -70,7 +70,6 @@ Every directory dealing with implementations has a folder containing the preproc
 
 #### Difficulty_score directory 
 Contains the entire process for the difficulty scoring curriculum learning method, adapted from Xu et al. (2020). 
-
     - The teacher models are trained on 5 splits of SNLI_train.csv. Relevant code is in subdirectory "teacher_models".
     - "cross_review" subdirectory contains the code for evaluating the trained teacher models and producing a dataset of instances with difficulty scores.
     - "annealing" subdirectory contains the final model and evaluation, trained on both curriculum (easiest -> hardest) and reverse curriculum (hardest -> easiest) ways.
@@ -83,7 +82,7 @@ Contains the entire process for the cartography curriculum learning method, adap
 
 ## Usage
 
-For recreating the best results of the experiments:
+**For recreating the best results of the experiments:**
 - Baselines:
     - Download the model: baseline/models/download.txt
     - Run evaluation: baseline/baselineEval.py
@@ -94,7 +93,7 @@ For recreating the best results of the experiments:
     - Download model: cartography_selection/models/download.txt
     - Run evaluation: cartography_selection/analysing_models.py
 
-To train the models yourself, run:
+**To train the models yourself, run:**
 - Baseline: baseline/baselineModels.py (trains the first random model not all five)
 - Difficulty score: difficulty_score/annealing/curriculumTraining.py (trains the difficulty score model)
 - Cartography: cartography_selection/training_models.py (trains the ambiguous easy triplet conserwing model on 5k)
