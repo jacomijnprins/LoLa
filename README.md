@@ -2,6 +2,7 @@
 This repository contains the scripts used for the paper "Learning more with Less: Curriculum Learning for Natural Language Inference using Strategice Data Selection". In this paper, curriculum learning was explored through mindfully selecting data from the SNLI train set by Bowman et al. (2015). Two different selection methods were explored: dataset carthography (Swayamdipta et al, 2020) and difficulty evaluation (Xu et al, 2020).
 
 Copyright [2025] [Jacomijn Prins, Pepijn Stoop, Oliver Popović, Jessica Haak, Lui Holohan]
+Contact: j.e.prins@students.uu.nl
 
 ## Installation and dependencies
 *All packages used:*
