@@ -1,0 +1,4 @@
+## Data Download
+All curriculum models available on Google Drive
+
+[Download the data from link](https://drive.google.com/file/d/1-2KQzMlTCrT91vQmODX_ptK-E5LGWZOJ/view?usp=drive_link)
