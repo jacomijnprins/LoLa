@@ -1,5 +1,5 @@
-# Learning more with Less: Curriculum Learning for Natural Language Inference using Strategice Data Selection
-This repository contains the scripts used for the paper "Learning more with Less: Curriculum Learning for Natural Language Inference using Strategice Data Selection". In this paper, curriculum learning was explored through mindfully selecting data from the SNLI train set by Bowman et al. (2015). Two different selection methods were explored: dataset carthography (Swayamdipta et al, 2020) and difficulty evaluation (Xu et al, 2020).
+# Learning more with Less: Curriculum Learning for Natural Language Inference using Strategic Data Selection
+This repository contains the scripts used for the paper "Learning more with Less: Curriculum Learning for Natural Language Inference using Strategice Data Selection". In this paper, curriculum learning was explored through mindfully selecting data from the SNLI train set by Bowman et al. (2015). Two different selection methods were explored: dataset cartography (Swayamdipta et al, 2020) and difficulty scoring evaluation (Xu et al, 2020).
 
 Copyright [2025] [Jacomijn Prins, Pepijn Stoop, Oliver Popović, Jessica Haak, Lui Holohan]
 Contact: j.e.prins@students.uu.nl
@@ -34,7 +34,7 @@ SNLI, S2A = snli_jsonl2dict('snli_1.0')
 ```
 From [Lasha Abzianidze](https://colab.research.google.com/drive/1cvOltz1eqA9QzzNCM5m7UsUhtw2_guxi?usp=sharing).
 
-The meta subs sets created in the project are included under ├──baseline/data. The meta subsets are generated using ├──baseline/preprocess.py
+The meta subssets created in the project are included under ├── baseline/data. The meta subsets are generated using ├── baseline/preprocess.py
 
 
 ## Results
@@ -48,10 +48,10 @@ The following accuracy scores on the SNLI development set were achieved using th
 |------------------|--------------------|
 | Difficulty scoring | 0.6872   |
 | Difficulty scoring reversed      | 0.6158|
-| Carthography-Ambiguous | 0.3329                 |
-| Carthography-Hard-to-learn        | 0.3307            |
-| Carthography-Easy-Ambiguous       | 0.3329                    |
-| Carthography-Mixed     | 0.3255      |
+| Cartography-Ambiguous | 0.3329                 |
+| Cartography-Hard-to-learn        | 0.3307            |
+| Cartography-Easy-Ambiguous       | 0.3329                    |
+| Cartography-Mixed     | 0.3255      |
 
 These were the scores for the 5k curricula:
 | Curriculum       | Accuracy                       |
@@ -80,7 +80,7 @@ Contains the entire process for the difficulty scoring curriculum learning metho
 #### Cartography_selection directory
 Contains the entire process for the cartography curriculum learning method, adapted from Swayamdipta et al. (2020).
 - The cartography scores dataset was acquired from the [Cartography github](https://github.com/allenai/cartography/tree/main/data/data_map_coordinates) from the paper.
-- Many curricula were produced for this selection method; all of them can be found in the curricula folder and every piece of code is made to run (produce/analyse) for a single curriculum, so the correct curriculum name must be given.
+- Many curricula were produced for this selection method; all of them can be found in the curricula folder and every piece of code is made to run (produce/analyze) a single curriculum, so the correct curriculum name must be given.
 
 
 ## Usage
@@ -99,7 +99,7 @@ Contains the entire process for the cartography curriculum learning method, adap
 **To train the models yourself, run:**
 - Baseline: baseline/baselineModels.py (trains the first random model not all five)
 - Difficulty score: difficulty_score/annealing/curriculumTraining.py (trains the difficulty score model)
-- Cartography: cartography_selection/training_models.py (trains the ambiguous easy triplet conserwing model on 5k)
+- Cartography: cartography_selection/training_models.py (trains the ambiguous easy triplet conserving model on 5k)
 
 
 # References
